@@ -10,4 +10,8 @@ class PagesController < ApplicationController
   def our_offer
     render layout: "application"
   end
+
+  def contact
+    render layout: "application"
+  end
 end
