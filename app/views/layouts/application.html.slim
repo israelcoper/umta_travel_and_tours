@@ -15,7 +15,7 @@ html lang="en"
           nav.breadcrumbs
             a href="#{root_path}" Home
             | &rarr;
-            span About Us
+            span= breadcrumb(params[:action])
 	             
       main class="content"
         = yield

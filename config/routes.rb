@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  get "about-us", to: "home#about_us"
-  root "home#index"
+  get "our-offer", to: "pages#our_offer"
+  get "about-us", to: "pages#about_us"
+  root "pages#home"
 end
