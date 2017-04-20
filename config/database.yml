@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: umta_travel_and_tours_development
+
+test:
+  <<: *default
+  database: umta_travel_and_tours_test
+
+production:
+  <<: *default
+  database: <%= ENV['UMTA_TRAVEL_AND_TOURS_DATABASE'] %>
+  username: <%= ENV['UMTA_TRAVEL_AND_TOURS_DATABASE_USERNAME'] %>
+  password: <%= ENV['UMTA_TRAVEL_AND_TOURS_DATABASE_PASSWORD'] %>
