@@ -27,3 +27,29 @@
 .ln-solid {
   margin: 10px 0;
 }
+
+.breadcrumbs {
+  font-size: 10px !important;
+  padding: 10px 10px !important;
+}
+
+.history {
+  margin-bottom: 25px;
+}
+
+.history img {
+  margin: 0 auto;
+}
+
+.team .team-name {
+  font-size: 14px !important;
+  margin-bottom: 10px !important;
+}
+
+.team .team-title {
+  font-size: 11px !important;
+}
+
+.team .team-description {
+  margin-top: 10px;
+}
