@@ -1,0 +1,29 @@
+.branding .site-title {
+  font-size: 16px !important;
+}
+
+.branding .site-description {
+  font-size: 10px !important;
+  margin: 10px 0 !important;
+}
+
+.social-links a {
+  margin: 0 2px!important;
+}
+
+.main-navigation .menu li.menu-item a {
+  font-size: 12px !important;
+}
+
+.site-footer .widget-title {
+  font-size: 16px !important;
+}
+
+.slider .slides li {
+  background-size: 100% 700px !important;
+  background-repeat: no-repeat !important;
+}
+
+.ln-solid {
+  margin: 10px 0;
+}
