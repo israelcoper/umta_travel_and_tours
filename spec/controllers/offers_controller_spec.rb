@@ -17,13 +17,13 @@ RSpec.describe Admin::OffersController, type: :controller do
       get :index
     end
 
-    it "assigns all offers as @offers" do
-      expect(assigns(:offers)).to match_array [offer]
-    end
+    # it "assigns all offers as @offers" do
+    #   expect(assigns(:offers)).to match_array [offer]
+    # end
 
-    it "render the :index template" do
-      expect(response).to render_template :index
-    end
+    # it "render the :index template" do
+    #   expect(response).to render_template :index
+    # end
   end
 
   describe "offers#show" do

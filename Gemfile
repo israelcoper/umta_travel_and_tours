@@ -20,6 +20,8 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'bootstrap-validator-rails'
 gem 'tinymce-rails'
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

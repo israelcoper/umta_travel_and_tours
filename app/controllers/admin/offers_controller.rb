@@ -4,7 +4,7 @@ class Admin::OffersController < ApplicationController
   layout "admin"
 
   def index
-    @offers = Offer.all
+    @offers = Offer.page(page).per(10)
   end
 
   def show

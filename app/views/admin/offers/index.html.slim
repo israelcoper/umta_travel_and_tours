@@ -19,3 +19,6 @@
           tbody
             = render @offers
 
+        .pull-right
+          = paginate @offers, theme: 'twitter-bootstrap-4', pagination_class: 'pagination-sm'
+

@@ -10,7 +10,7 @@
 
 .form-group
   label.col-sm-2.control-label Category
-  .col-sm-10= f.select :category, options_for_select(Offer.categories.keys), {}, { class: "form-control" }
+  .col-sm-10= f.select :category, options_for_select(Offer.categories.keys, selected: @offer.category), {}, { class: "form-control" }
 
 .form-group
   label.col-sm-2.control-label Location
