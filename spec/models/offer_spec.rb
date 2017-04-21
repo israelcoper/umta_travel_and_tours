@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Offer, type: :model do
   context "constants" do
-    it { expect(Offer.offer_types).to eq({"default"=>0, "latest"=>1, "featured"=>2}) }
+    it { expect(Offer.categories).to eq({"default"=>0, "latest"=>1, "featured"=>2}) }
   end
 
   describe "validations" do

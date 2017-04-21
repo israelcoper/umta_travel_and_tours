@@ -1,0 +1,21 @@
+- content_for :content do
+  .page-header
+    .header-left
+      h3 Offers
+    .header-right.pull-right
+      = link_to "Add offer", new_admin_offer_path, class: "btn btn-default"
+
+  .row
+    .col-md-12
+      .table-responsive
+        table.table
+          thead
+            tr
+              th Category
+              th Location
+              th Detail
+              th Rate
+              th.actions Actions
+          tbody
+            = render @offers
+

@@ -1,0 +1,12 @@
+tr
+  td= offer.category
+  td= offer.location
+  td= simple_format offer.detail
+  td= number_to_currency(offer.rate, unit: "PHP")
+  td.actions
+    a href="#{edit_admin_offer_path(offer)}" class="btn btn-primary btn-xs"
+      i.fa.fa-pencil
+    | &nbsp;
+    a href="#{admin_offer_path(offer)}" class="btn btn-danger btn-xs" data-method="delete" data-confirm="Are you sure?"
+      i.fa.fa-trash-o
+

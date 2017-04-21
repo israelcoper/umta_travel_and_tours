@@ -1,0 +1,10 @@
+- content_for :content do
+  .page-header
+    .header-left
+      h3 New offer
+
+  .row
+    .col-md-12
+      = form_for @offer, url: admin_offers_path(@offer), html: { id: "form-offer", class: "form-horizontal" } do |f|
+        = render partial: "form", locals: { f: f }
+

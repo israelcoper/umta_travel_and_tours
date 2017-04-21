@@ -2,15 +2,15 @@ FactoryGirl.define do
   sequence(:location) {|n| "Location #{n}"}
 
   factory :offer do
-    offer_type 0
+    category "default"
     location { generate(:location) }
     detail { FFaker::Lorem.sentence }
     rate "1000.0"
 
     factory :invalid_offer do
-      location nil
-      detail nil
-      rate nil
+      location ""
+      detail ""
+      rate ""
     end
   end
 end

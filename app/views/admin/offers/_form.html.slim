@@ -1,0 +1,33 @@
+- if @offer.errors.any?
+  #error_explanation
+    h5
+      = pluralize(@offer.errors.count, "error")
+      | &nbsp;
+      | prohibited this offer from being saved:
+    ul
+      - @offer.errors.full_messages.each do |message|
+        li= message
+
+.form-group
+  label.col-sm-2.control-label Category
+  .col-sm-10= f.select :category, options_for_select(Offer.categories.keys), {}, { class: "form-control" }
+
+.form-group
+  label.col-sm-2.control-label Location
+  .col-sm-10= f.text_field :location, class: "form-control"
+
+.form-group
+  label.col-sm-2.control-label Detail
+  .col-sm-10
+    = f.text_area :detail, class: "form-control tinymce", rows: 10
+
+.form-group
+  label.col-sm-2.control-label Answer
+  .col-sm-10= f.text_field :rate, class: "form-control"
+
+.form-group
+  .col-sm-10.col-sm-offset-2
+    = link_to "Cancel", admin_offers_path, class: "btn btn-default"
+    | &nbsp;
+    = f.submit "Save", class: "btn btn-primary"
+
