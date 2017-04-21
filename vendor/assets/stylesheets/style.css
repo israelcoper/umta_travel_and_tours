@@ -882,6 +882,14 @@ table {
   color: #E42626;
   border-color: #E42626;
 }
+.social-links a.youtube:hover {
+  color: #FF0000;
+  border-color: #FF0000;
+}
+.social-links a.skype:hover {
+  color: #87CEFA;
+  border-color: #87CEFA;
+}
 
 .filterable-items .filterable-item {
   -webkit-transition-property: -webkit-transform, opacity;
