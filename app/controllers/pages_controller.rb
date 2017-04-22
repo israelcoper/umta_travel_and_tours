@@ -1,17 +1,17 @@
 class PagesController < ApplicationController
+  layout "application"
+
   def home
+    @featured_offers = Offer.featured
     render layout: "home"
   end
 
   def about_us
-    render layout: "application"
   end
 
   def our_offer
-    render layout: "application"
   end
 
   def contact
-    render layout: "application"
   end
 end

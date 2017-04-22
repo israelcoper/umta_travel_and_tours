@@ -7,4 +7,6 @@ class Offer < ApplicationRecord
   validates :rate, presence: true, numericality: true
   validates_attachment_presence :image
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+
+  scope :featured, -> { where(category: "featured").limit(3) }
 end

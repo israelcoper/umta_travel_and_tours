@@ -1,32 +1,21 @@
 .slider
-  ul class="slides"
-    li data-background="#{image_path('boracay.jpg') }"
+  - if @featured_offers.any?
+    ul class="slides"
+      - @featured_offers.each do |offer|
+        li data-background="#{image_path(offer.image.url(:large)) }"
+          .container
+            .slide-caption.col-md-4
+              h2 class="slide-title"= offer.location 
+              = simple_format offer.detail
+            
+    .flexslider-controls
       .container
-        .slide-caption.col-md-4
-          h2 class="slide-title" Boracay
-          p Consectetur adipisicing elit. Dignissimos fuga eos nihil repellat et enim, neque, aliquid delectus quia hic praesentium sit, repudiandae pariatur deleniti vero.
-          
-    li data-background="#{image_path('caramoan.jpg')}"
-      .container
-        .slide-caption.col-md-4
-          h2 class="slide-title" Caramoan
-          p Consectetur adipisicing elit. Pariatur, ut assumenda, delectus illo est dignissimos maiores quisquam rem nulla harum ratione, dolorum recusandae, unde cumque sint
-          
-    li data-background="#{image_path('launion.jpg')}"
-      .container
-        .slide-caption.col-md-4
-          h2 class="slide-title" La Union
-          p Consectetur adipisicing elit. Facere excepturi itaque quasi dolorem deserunt nesciunt neque debitis incidunt voluptatem, laudantium, odio fugit. Obcaecati fugiat perferendis numquam?
-          
-  .flexslider-controls
-    .container
-      ol class="flex-control-nav"
-        li
-          a 1
-        li
-          a 2
-        li
-          a 3
+        ol class="flex-control-nav"
+          - @featured_offers.each_with_index do |offer,index|
+            li
+              a = index + 1
+  - else
+    = render partial: "shared/featured_offers"
 
 .fullwidth-block.offers-section
   .container

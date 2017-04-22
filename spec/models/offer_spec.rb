@@ -17,4 +17,14 @@ RSpec.describe Offer, type: :model do
     it { should validate_attachment_content_type(:image).allowing('image/png', 'image/gif').rejecting('text/plain', 'text/xml') }
  
   end
+
+  context "scope" do
+    let(:offer_1) { create(:offer, category: "featured") }
+    let(:offer_2) { create(:offer, category: "featured") }
+    let(:offer_3) { create(:offer, category: "featured") }
+
+    describe "featured" do
+      it { expect(Offer.featured).to match_array [offer_1, offer_2, offer_3] }
+    end
+  end
 end
