@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @featured_offers = Offer.featured
+    @latest_offers = Offer.latest
     render layout: "home"
   end
 

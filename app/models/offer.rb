@@ -9,4 +9,5 @@ class Offer < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   scope :featured, -> { where(category: "featured").limit(3) }
+  scope :latest, -> { where(category: "latest").limit(4) }
 end

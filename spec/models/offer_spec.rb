@@ -23,8 +23,17 @@ RSpec.describe Offer, type: :model do
     let(:offer_2) { create(:offer, category: "featured") }
     let(:offer_3) { create(:offer, category: "featured") }
 
+    let(:offer_4) { create(:offer, category: "latest") }
+    let(:offer_5) { create(:offer, category: "latest") }
+    let(:offer_6) { create(:offer, category: "latest") }
+    let(:offer_7) { create(:offer, category: "latest") }
+
     describe "featured" do
       it { expect(Offer.featured).to match_array [offer_1, offer_2, offer_3] }
+    end
+
+    describe "latest" do
+      it { expect(Offer.latest).to match_array [offer_4, offer_5, offer_6, offer_7] }
     end
   end
 end
