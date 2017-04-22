@@ -1,5 +1,6 @@
 tr
   td= offer.category
+  td= image_tag offer.image.url(:small)
   td= offer.location
   td= simple_format offer.detail
   td= number_to_currency(offer.rate, unit: "PHP")

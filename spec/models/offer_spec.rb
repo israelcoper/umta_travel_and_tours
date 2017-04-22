@@ -11,5 +11,10 @@ RSpec.describe Offer, type: :model do
     it { should validate_presence_of :rate }
 
     it { should validate_numericality_of :rate }
+
+    it { should have_attached_file(:image) }
+    it { should validate_attachment_presence(:image) }
+    it { should validate_attachment_content_type(:image).allowing('image/png', 'image/gif').rejecting('text/plain', 'text/xml') }
+ 
   end
 end

@@ -5,6 +5,6 @@
 
   .row
     .col-md-12
-      = form_for @offer, url: admin_offer_path(@offer), html: { id: "form-offer", class: "form-horizontal" } do |f|
+      = form_for @offer, url: admin_offer_path(@offer), html: { id: "form-offer", class: "form-horizontal", multipart: true } do |f|
         = render partial: "form", locals: { f: f }
 

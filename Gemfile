@@ -22,6 +22,7 @@ gem 'bootstrap-validator-rails'
 gem 'tinymce-rails'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
+gem "paperclip", "~> 5.0.0"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

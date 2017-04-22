@@ -42,7 +42,7 @@ class Admin::OffersController < ApplicationController
   protected
 
   def offer_params
-    params.require(:offer).permit(:category, :location, :detail, :rate)
+    params.require(:offer).permit(:category, :location, :detail, :rate, :image)
   end
 
   def find_offer
