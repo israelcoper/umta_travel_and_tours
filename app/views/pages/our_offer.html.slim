@@ -17,76 +17,20 @@
       a href="#" class="wow fadeInRight" data-wow-delay="1s" data-filter=".europe" Europe
       a href="#" class="wow fadeInRight" data-wow-delay="1.2s" data-filter=".australia" Australia
       
-    .filterable-items
-      .filterable-item.south-america
-        article class="offer-item"
-          figure class="featured-image"
-            img src="http://placehold.it/270x174" alt=""
-          h2 class="entry-title"
-            a href="#" Efficitur efficitur convallis
-          p Sed vitae fermentum lacus in augue massa pellentesque mauris vel iaculis sclerisque nulla
-          .price
-            strong $2900
-            small
-              | /10 days
-
-      .filterable-item.south-america
-        article class="offer-item"
-          figure class="featured-image"
-            img src="http://placehold.it/270x174" alt=""
-          h2 class="entry-title"
-            a href="#" Efficitur efficitur convallis
-          p Sed vitae fermentum lacus in augue massa pellentesque mauris vel iaculis sclerisque nulla
-          .price
-            strong $2900
-            small
-              | /10 days
-
-      .filterable-item.south-america
-        article class="offer-item"
-          figure class="featured-image"
-            img src="http://placehold.it/270x174" alt=""
-          h2 class="entry-title"
-            a href="#" Efficitur efficitur convallis
-          p Sed vitae fermentum lacus in augue massa pellentesque mauris vel iaculis sclerisque nulla
-          .price
-            strong $2900
-            small
-              | /10 days
-
-      .filterable-item.south-america
-        article class="offer-item"
-          figure class="featured-image"
-            img src="http://placehold.it/270x174" alt=""
-          h2 class="entry-title"
-            a href="#" Efficitur efficitur convallis
-          p Sed vitae fermentum lacus in augue massa pellentesque mauris vel iaculis sclerisque nulla
-          .price
-            strong $2900
-            small
-              | /10 days
-
-      .filterable-item.south-america
-        article class="offer-item"
-          figure class="featured-image"
-            img src="http://placehold.it/270x174" alt=""
-          h2 class="entry-title"
-            a href="#" Efficitur efficitur convallis
-          p Sed vitae fermentum lacus in augue massa pellentesque mauris vel iaculis sclerisque nulla
-          .price
-            strong $2900
-            small
-              | /10 days
-
-      .filterable-item.south-america
-        article class="offer-item"
-          figure class="featured-image"
-            img src="http://placehold.it/270x174" alt=""
-          h2 class="entry-title"
-            a href="#" Efficitur efficitur convallis
-          p Sed vitae fermentum lacus in augue massa pellentesque mauris vel iaculis sclerisque nulla
-          .price
-            strong $2900
-            small
-              | /10 days
+    - if @offers.any?
+      .filterable-items
+        - @offers.each do |offer|
+          .filterable-item
+            article class="offer-item"
+              figure class="featured-image"
+                = image_tag offer.image.url(:medium), width: "270", height: "174"
+              h2 class="entry-title"
+                a href="javascript:;" = offer.location
+              = simple_format offer.detail
+              .price
+                strong = number_to_currency(offer.rate, unit: "PHP")
+      .paginate.wow.fadeInUp
+        = paginate @offers, theme: 'twitter-bootstrap-4'
+    - else
+      = render partial: "shared/offers"
 

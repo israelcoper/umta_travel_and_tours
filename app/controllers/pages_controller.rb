@@ -11,6 +11,7 @@ class PagesController < ApplicationController
   end
 
   def our_offer
+    @offers = Offer.page(page).per(6)
   end
 
   def contact
